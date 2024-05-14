@@ -57,4 +57,4 @@ jobs:
           script: |
             docker pull ghilmanaji/nginx-loadbalancer:latest
             docker rm -f nginx-loadbalancer || true
-            docker run -d --name nginx-loadbalancer -p 80:80 -v ${{ secrets.SERVER_USER }}/nginx:/etc/nginx/nginx.conf ghilmanaji/nginx-loadbalancer:latest
+            docker run -d --name nginx-loadbalancer -p 80:80 -v root/nginx:/etc/nginx/nginx.conf ghilmanaji/nginx-loadbalancer:latest
