@@ -55,7 +55,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/nginx-loadbalancer:latest
+            docker pull ghilmanaji/nginx-loadbalancer:latest
             docker stop nginx-loadbalancer || true
             docker rm nginx-loadbalancer || true
-            docker run -d --name nginx-loadbalancer -p 80:80 ${{ secrets.DOCKER_USERNAME }}/nginx-loadbalancer:latest
+            docker run -d --name nginx-loadbalancer -p 80:80 ghilmanaji/nginx-loadbalancer:latest
